@@ -1,0 +1,70 @@
+# if interactive, else do nothing
+[[ $- != *i* ]] && return
+
+# DIR="$(dirname "$(readlink -f "$0")")"
+DIR=$HOME
+
+DOT_DIR=$DIR/dotfiles
+
+function psource() {
+  pushd . &> /dev/null
+  cd $HOME
+  source $HOME/.bashrc
+  if [[ "$1" == "all" ]]; then
+    source $HOME/.inputrc
+  else
+    echo "$ psource all (will source everything)"
+  fi
+  popd &> /dev/null
+}
+
+export EDITOR=vim
+
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$DOT_DIR/bin
+
+source $DOT_DIR/.secrets
+
+source $DOT_DIR/bash/bashcolors
+source $DOT_DIR/bash/vars.sh
+source $DOT_DIR/bash/alias.sh
+source $DOT_DIR/bash/functions.sh
+source $DOT_DIR/bash/site-functions.sh
+source $DOT_DIR/bash/.secrets.sh
+
+# Work related stuff
+source $DOT_DIR/work/vars.sh
+source $DOT_DIR/work/functions.sh
+
+# Personal Specific
+source $DOT_DIR/p/personal.sh
+
+PROMPT_COMMAND=prompt_command
+
+prompt_command() {
+  if [ -n "$(cd $DOT_DIR; git status --porcelain)" ]; then
+     echo -n "D"
+  fi
+
+  local git_branch
+
+  git_branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' | cut -d" " -f2)
+
+  if ! [[ -z "$git_branch" ]]; then
+    echo -en "($bldred$git_branch$txtrst)"
+  fi
+}
+
+
+LINE1="\[$bldred\]\[$txtrst\][\[$bldgrn\]\u@\h\[$txtrst\]][\[$bldblu\]\w\[$txtrst\]]"
+if [ -n "$SSH_CLIENT" ]; then 
+  LINE1="\[$bldwht\] \[$txtrst\]\[$bldblu\]SSH\[$txtrst\]\[[$bldgrn\]\u@$bakred\h\[$txtrst\]][\[$bldblu\]\w\[$txtrst\]]"
+fi
+
+LINE2="\[$bldblu\]$ \[$txtrst\]"
+PS1="$LINE1\n$LINE2"
+
+eval "$(direnv hook bash)"
+# eval "$(rbenv init -)"
+
+$DOT_DIR/post.sh

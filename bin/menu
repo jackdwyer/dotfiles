@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# write this to handle change in dpi
+# possible font sizes:
+# 20
+# 22
+# 24
+# 28
+# 32
+
+if [[ $(xdpyinfo | grep resolution | awk '{print $2}') == "96x96" ]]; then
+    dmenu_run -fn "-*-terminus-medium-*-*-*-20-*-*-*-*-*-iso8859-2"
+else
+    dmenu_run -fn "-*-terminus-medium-*-*-*-28-*-*-*-*-*-iso8859-2"
+fi
+

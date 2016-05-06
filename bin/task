@@ -1,0 +1,6 @@
+#!/bin/bash
+if [[ -z $1 ]]; then
+    echo 'pass task as arg'
+    exit 1
+fi
+redis-cli -n 15 set cur_asana "$1"

@@ -1,0 +1,9 @@
+#!/bin/bash
+percent="$1"
+if [[ "$1" == "up" ]]; then
+  amixer -q sset Master 5%+
+elif [[ "$1" == "down" ]]; then
+  amixer -q sset Master 5%-
+else
+  amixer -q sset Master $percent
+fi

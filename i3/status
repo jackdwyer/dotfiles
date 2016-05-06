@@ -1,0 +1,72 @@
+general {
+    output_format = "i3bar"
+    separator = "|"
+    interval = 5
+    colors = true
+}
+
+# order += "ipv6"
+order += "disk /"
+order += "wireless wlp4s0"
+order += "ethernet enp0s20u1u1"
+order += "ethernet enp0s20u1u3"
+order += "load"
+order += "tztime utc"
+order += "battery 0"
+# order += "tztime london"
+# order += "tztime france"
+order += "tztime local"
+
+wireless wlp4s0 {
+    format_up = "%quality at %essid, %bitrate) %ip"
+    format_down = "W"
+}
+
+ethernet enp0s20u1u3 {
+    format_up = "E: %ip %speed"
+    format_down = "E"
+}
+
+ethernet enp0s20u1u1 {
+    format_up = "E: %ip %speed"
+    format_down = "E"
+}
+
+
+load {
+    format = "%5min"
+}
+
+battery 0 {
+        format = "%status %percentage %remaining %emptytime"
+        format_down = "No battery"
+        status_chr = "⚇ CHR"
+        status_bat = "⚡ BAT"
+        status_full = "☻ FULL"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+
+tztime local {
+    format = "%Y-%m-%d %H:%M:%S"
+}
+
+tztime london {
+    format = "%H:%M"
+    timezone = "Europe/London"
+}
+
+tztime france {
+    format = "%H:%M"
+    timezone = "Europe/Paris"
+}
+
+tztime utc {
+    format = "%Y-%m-%d %H:%M:%S"
+    timezone = "Etc/UTC"
+}
+
+disk "/" {
+    format = "%free %percentage_free"
+    low_threshold = 25
+}

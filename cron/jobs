@@ -1,0 +1,3 @@
+* * * * * $HOME/dotfiles/cron/is_it_up.sh http://www.jackdwyer.org JK
+* * * * * $HOME/dotfiles/cron/is_it_up.sh https://www.blueapron.com BA
+*/15 * * * * $HOME/dotfiles/cron/custom/weather/venv-weather/bin/python $HOME/dotfiles/cron/custom/weather/get_current_weather.py

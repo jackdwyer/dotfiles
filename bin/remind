@@ -1,0 +1,12 @@
+#!/bin/bash
+# set -v
+ahead=$1
+time=${1:-5}
+
+shift 
+reminder="$@"
+when=$(date -d "now + $time min" +'%H:%M')
+# echo $when
+# echo "$reminder"
+
+echo "/usr/bin/notify-send \"$reminder\"" | at $when
