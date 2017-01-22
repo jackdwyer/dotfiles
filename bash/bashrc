@@ -1,0 +1,44 @@
+# if interactive, else do nothing
+[[ $- != *i* ]] && return
+
+DIR=$HOME
+export DOT_DIR=$DIR/dotfiles
+
+export PATH=$PATH:$HOME/bin
+
+source ${DOT_DIR}/bash/bashcolors
+source ${DOT_DIR}/mine.sh
+source ${DOT_DIR}/work.sh
+source ${DOT_DIR}/secrets.sh
+
+export PATH=$PATH:$DOT_DIR/bin
+
+export EDITOR=vim
+
+eval "$(direnv hook bash)"
+
+# export VAGRANT_DEFAULT_PROVIDER=virtualbox
+
+function aws_account() {
+  if [[ ! -z "${AWS_DEFAULT_PROFILE}" ]]; then
+    echo -e "[${bldcyn}${AWS_DEFAULT_PROFILE}${txtrst}]"
+  fi
+}
+
+function git_branch() {
+  local _branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+  if [[ ! -z ${_branch} ]]; then
+    echo -e "[${bldred}$(git rev-parse --abbrev-ref HEAD)${txtrst}]"
+  fi
+}
+
+function user_at_host() {
+  echo -e "${bldgrn}${USER}@$(hostname)${txtrst}"
+}
+
+LINE1='$(git_branch)$(aws_account)[$(user_at_host)][\w]'
+LINE2="\[$bldblu\]$ \[$txtrst\]"
+
+PS1="$LINE1\n$LINE2"
+
+$DOT_DIR/post.sh
