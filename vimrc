@@ -194,3 +194,5 @@ au FileType arduino setl sw=2 sts=2 et
 " force hcl detection
 au BufRead,BufNewFile *.tf set filetype=hcl
 au BufRead,BufNewFile Apronfile set filetype=yaml
+
+au BufRead,BufNewFile *.go set filetype=go
