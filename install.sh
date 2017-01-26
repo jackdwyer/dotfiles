@@ -10,4 +10,4 @@ ln -s ${DOT_DIR}/inputrc ${HOME}/.inputrc
 ln -s ${DOT_DIR}/tmux.conf ${HOME}/.tmux.conf
 ln -s ${DOT_DIR}/vimrc ${HOME}/.vimrc
 ln -s ${DOT_DIR}/Xresources ${HOME}/.Xresources
-ln -s ${DOT_DIR}/.i3/config ${HOME}/.i3/config
+ln -s ${DOT_DIR}/i3/config ${HOME}/.i3/config
