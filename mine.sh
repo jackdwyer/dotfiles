@@ -46,3 +46,8 @@ function vc() {
     source "venv-${repo}/bin/activate"
   fi
 }
+
+GREP_OPTS='--exclude-dir=berks-cookboks'
+function todos() {
+  grep -rnIw ${GREP_OPTS} ./ -e "TODO" | grep -v '-e "TODO"'
+}
