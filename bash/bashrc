@@ -42,7 +42,7 @@ function am_i_ssh() {
   fi
 }
 
-LINE1='$(todos_num)$(git_branch)$(aws_account)[$(user_at_host)][\w]'
+LINE1='$(git_branch)$(aws_account)[$(user_at_host)][\w]'
 LINE2="$(am_i_ssh)\[$bldblu\]$ \[$txtrst\]"
 
 PS1="$LINE1\n$LINE2"
