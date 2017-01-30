@@ -17,7 +17,7 @@ export EDITOR=vim
 
 eval "$(direnv hook bash)"
 
-# export VAGRANT_DEFAULT_PROVIDER=virtualbox
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 function aws_account() {
   if [[ ! -z "${AWS_DEFAULT_PROFILE}" ]]; then
@@ -36,8 +36,14 @@ function user_at_host() {
   echo -e "${bldgrn}${USER}@$(hostname)${txtrst}"
 }
 
-LINE1='$(git_branch)$(aws_account)[$(user_at_host)][\w]'
-LINE2="\[$bldblu\]$ \[$txtrst\]"
+function am_i_ssh() {
+  if [[ ! -z ${SSH_CONNECTION} ]]; then
+    echo -e "${bakred}${bldwht} ${undwht}SSH${txtrst}${bakred} ${txtrst}"
+  fi
+}
+
+LINE1='$(todos_num)$(git_branch)$(aws_account)[$(user_at_host)][\w]'
+LINE2="$(am_i_ssh)\[$bldblu\]$ \[$txtrst\]"
 
 PS1="$LINE1\n$LINE2"
 
