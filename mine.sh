@@ -51,3 +51,17 @@ GREP_OPTS='--exclude-dir=berks-cookboks'
 function todos() {
   grep -rnIw ${GREP_OPTS} ./ -e "TODO" | grep -v '-e "TODO"'
 }
+
+test_http() {
+  RED='\033[1;31m'
+  RST='\033[0m'
+  while :; do
+    VAL=$(curl -s -o/dev/null -w "%{http_code}" "${1}")
+    if [[ ${VAL} -eq "200" ]]; then
+      echo -n "."
+    else
+      printf " ${RED}FAIL ${VAL}${RST} "
+    fi
+    sleep 1s;
+  done
+}
