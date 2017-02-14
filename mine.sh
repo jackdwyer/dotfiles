@@ -53,11 +53,13 @@ function todos() {
 }
 
 test_http() {
+  ENDPOINT=${1}
+  HTTP_RESP=${2:-200}
   RED='\033[1;31m'
   RST='\033[0m'
   while :; do
-    VAL=$(curl -s -o/dev/null -w "%{http_code}" "${1}")
-    if [[ ${VAL} -eq "200" ]]; then
+    VAL=$(curl -s -o/dev/null -w "%{http_code}" "${ENDPOINT}")
+    if [[ ${VAL} -eq "${HTTP_RESP}" ]]; then
       echo -n "."
     else
       printf " ${RED}FAIL ${VAL}${RST} "
