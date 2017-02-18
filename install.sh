@@ -3,11 +3,38 @@
 
 DOT_DIR=${HOME}/dotfiles
 
-mkdir ${HOME}/{bin,programming,.i3} &> /dev/null ||
+function log_info() {
+  echo "[INFO] ${1}"
+}
 
-ln -s ${DOT_DIR}/bash/bashrc ${HOME}/.bashrc
-ln -s ${DOT_DIR}/inputrc ${HOME}/.inputrc
-ln -s ${DOT_DIR}/tmux.conf ${HOME}/.tmux.conf
-ln -s ${DOT_DIR}/vimrc ${HOME}/.vimrc
-ln -s ${DOT_DIR}/Xresources ${HOME}/.Xresources
-ln -s ${DOT_DIR}/i3/config ${HOME}/.i3/config
+function make_link() {
+  _source=${1}
+  _target=${2}
+
+  if [[ -f "${_target}" ]]; then
+    bak_destination="${_target}_$(date -I).bak"
+    log_info "Moving ${_target} -> ${bak_destination}"
+    mv ${_target} ${bak_destination}
+  fi
+  if ! [[ -L "${_target}" ]]; then
+    ln -s ${_source} ${_target}
+  else
+    log_info "${_source} already symlink"
+  fi
+}
+
+mkdir ${HOME}/{bin,tools,programming,.i3,.vim} &> /dev/null ||
+
+make_link "${DOT_DIR}/bash/bashrc" "${HOME}/.bashrc"
+make_link "${DOT_DIR}/inputrc" "${HOME}/.inputrc"
+make_link "${DOT_DIR}/tmux.conf" "${HOME}/.tmux.conf"
+make_link "${DOT_DIR}/vimrc" "${HOME}/.vim/vimrc"
+make_link "${DOT_DIR}/Xresources" "${HOME}/.Xresources"
+make_link "${DOT_DIR}/i3/config" "${HOME}/.i3/config"
+
+touch "${DOT_DIR}/work.sh"
+touch "${DOT_DIR}/secrets.sh"
+
+# function revert() {
+#     mv "${_source}_$(date -I).bak" ${_source} 
+# }
