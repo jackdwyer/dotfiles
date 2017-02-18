@@ -120,6 +120,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'sudar/vim-arduino-syntax'
 " Plugin 'hashivim/vim-terraform'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'vimwiki/vimwiki'
 call vundle#end()
 
 """NERDTree
