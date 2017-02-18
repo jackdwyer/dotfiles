@@ -2,7 +2,7 @@
 
 ## Dependencies
 ```bash
-$ dnf install git xterm the_silver_searcher xclip scrot tmux i3 dmenu i3lock vagrant neovim direnv curl go jq weechat python-virtualenv openvpn nmap ShellCheck feh terminus-fonts
+$ dnf install git xterm the_silver_searcher xclip scrot tmux i3 dmenu i3lock vagrant neovim direnv curl go jq weechat python-virtualenv openvpn nmap ShellCheck feh terminus-fonts screen
 ```
 
 ## Installation
