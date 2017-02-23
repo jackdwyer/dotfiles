@@ -13,11 +13,11 @@ source ${DOT_DIR}/secrets.sh
 
 export PATH=$PATH:$DOT_DIR/bin
 
-export EDITOR=vim
+export EDITOR=nvim
 
 eval "$(direnv hook bash)"
 
-export VAGRANT_DEFAULT_PROVIDER=virtualbox
+# export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 function aws_account() {
   if [[ ! -z "${AWS_DEFAULT_PROFILE}" ]]; then
