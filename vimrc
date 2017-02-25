@@ -121,6 +121,7 @@ Plugin 'sudar/vim-arduino-syntax'
 " Plugin 'hashivim/vim-terraform'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vimwiki/vimwiki'
+Plugin 'hashivim/vim-vagrant'
 call vundle#end()
 
 """NERDTree
