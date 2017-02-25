@@ -24,7 +24,7 @@ function p() {
   if [[ ${1} == '-a' ]]; then
     cat /dev/urandom | tr -d -c [:alnum:] | head -c 35; echo
   else
-    cat /dev/urandom | tr -d -c [:graph:] | head -c 35; echo
+    cat /dev/urandom | tr -d -c [:print:] | head -c 35; echo
   fi
 }
 
