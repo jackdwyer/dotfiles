@@ -1,4 +1,7 @@
-all: dotfiles tools vim-plugins
+all: folders dotfiles tools vim-plugins
+
+folders:
+	mkdir -p $(HOME)/{bin,tools,programming,.i3,.vim}
 
 vim-plugins:
 	nvim -u $(HOME)/.vim/vimrc -c VundleInstall +qall

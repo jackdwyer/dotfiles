@@ -23,8 +23,6 @@ function make_link() {
   fi
 }
 
-mkdir ${HOME}/{bin,tools,programming,.i3,.vim} &> /dev/null ||
-
 make_link "${DOT_DIR}/bash/bashrc" "${HOME}/.bashrc"
 make_link "${DOT_DIR}/inputrc" "${HOME}/.inputrc"
 make_link "${DOT_DIR}/tmux.conf" "${HOME}/.tmux.conf"
