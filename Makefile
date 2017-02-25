@@ -1,4 +1,6 @@
-all: dotfiles tools
+all: dotfiles tools vim-plugins
+
+vim-plugins:
 	nvim -u $(HOME)/.vim/vimrc -c VundleInstall +qall
 
 SHELL=/bin/bash
