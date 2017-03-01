@@ -3,7 +3,7 @@
 ## Dependencies
 ```bash
 $ dnf install curl direnv dmenu feh git go i3 i3lock jq neovim nmap openvpn \
-  python-virtualenv screen scrot ShellCheck terminus-fonts \
+  python-virtualenv screen scrot ShellCheck sshfs terminus-fonts \
   the_silver_searcher tmux vagrant vlc weechat xclip xterm
 ```
 
