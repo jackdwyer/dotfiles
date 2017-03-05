@@ -173,6 +173,7 @@ let g:ctrl_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 au FileType yaml setl sw=2 sts=2 et
+au FileType yml setl sw=2 sts=2 et
 au FileType tf setl sw=2 sts=2 et
 au FileType sh setl sw=2 sts=2 et
 au FileType tf setl sw=2 sts=2 et
