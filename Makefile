@@ -1,4 +1,5 @@
-all: folders dotfiles tools vim-plugins
+.PHONY: st
+all: folders dotfiles st tools vim-plugins
 
 folders:
 	mkdir -p $(HOME)/{bin,tools,programming,.i3,.vim}
@@ -9,6 +10,12 @@ vim-plugins:
 SHELL=/bin/bash
 dotfiles:
 	./install.sh
+
+st:
+	git clone git://git.suckless.org/st /tmp/st
+	cp $(PWD)/st/config.h /tmp/st
+	cd /tmp/st && make && mv st $(HOME)/bin/
+	rm -fr /tmp/st
 
 tools:
 	curl -s -o $(HOME)/bin/geoip https://raw.githubusercontent.com/jackdwyer/geoip/master/geoip.sh
