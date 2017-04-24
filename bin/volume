@@ -1,12 +1,12 @@
 #!/bin/bash
-percent="$1"
 if [[ "$1" == "up" ]]; then
-  amixer -q sset Master 5%+
-  pactl set-sink-volume 1 +5%
+  for sink in $(pactl list | grep "Card #[0-9]" | cut -d"#" -f2); do
+    pactl set-sink-volume "$sink" +5%
+  done
 elif [[ "$1" == "down" ]]; then
-  amixer -q sset Master 5%-
-  pactl set-sink-volume 1 -5%
+  for sink in $(pactl list | grep "Card #[0-9]" | cut -d"#" -f2); do
+    pactl set-sink-volume "$sink" -5%
+  done
 else
-  amixer -q sset Master $percent
-  pactl set-sink-volume 1 ${precent}%
+  echo "Unsupported usage"
 fi
