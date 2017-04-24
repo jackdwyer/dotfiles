@@ -2,8 +2,11 @@
 percent="$1"
 if [[ "$1" == "up" ]]; then
   amixer -q sset Master 5%+
+  pactl set-sink-volume 1 +5%
 elif [[ "$1" == "down" ]]; then
   amixer -q sset Master 5%-
+  pactl set-sink-volume 1 -5%
 else
   amixer -q sset Master $percent
+  pactl set-sink-volume 1 ${precent}%
 fi
