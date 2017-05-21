@@ -18,6 +18,7 @@ export EDITOR=nvim
 eval "$(direnv hook bash)"
 
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
+export GOPATH=${HOME}/go
 
 function aws_account() {
   if [[ ! -z "${AWS_DEFAULT_PROFILE}" ]]; then
