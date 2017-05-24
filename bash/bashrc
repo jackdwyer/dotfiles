@@ -10,6 +10,7 @@ source ${DOT_DIR}/bash/bashcolors
 source ${DOT_DIR}/mine.sh
 source ${DOT_DIR}/work.sh
 source ${DOT_DIR}/secrets.sh
+source ${DOT_DIR}/alias.sh
 
 export PATH=$PATH:$DOT_DIR/bin
 
