@@ -130,14 +130,17 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 let g:vim_markdown_folding_disabled=1
-" let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_checkers=['flake8']
 let g:syntastic_ruby_checkers=['foodcritic']
-" let g:syntastic_sh_checkers=['shellcheck']
-"let g:syntastic_javascript_checkers=['json_verify'] 
+let g:syntastic_sh_checkers=['shellcheck']
+let g:syntastic_javascript_checkers=['json_verify'] 
 " let g:syntastic_cpp_checkers=['']
 let g:indentLine_color_term = 245
 let g:indentLine_char = '¦'
 let g:indentLine_enabled = 1
+let g:syntastic_debug = 1
+let g:syntastic_check_on_w = 1
+
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -181,6 +184,7 @@ au FileType ruby setl sw=2 sts=2 et
 au FileType css setl sw=2 sts=2 et
 au FileType html setl sw=2 sts=2 et
 au FileType json setl sw=2 sts=2 et
+au FileType javascript setl sw=2 sts=2 et
 
 " source ~/.simplenoterc 
  
