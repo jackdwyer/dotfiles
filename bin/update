@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [[ $(git ls-remote 2>/dev/null | head -1 | sed "s/HEAD//") != $(git rev-parse --verify HEAD) ]]; then 
+  echo "update please"; 
+fi

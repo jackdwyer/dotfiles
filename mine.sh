@@ -1,6 +1,7 @@
 alias ls='ls --color=auto'
 alias l='ls --color=auto'
 alias lock='i3lock -c 000000'
+alias v='nvim -u ~/.vim/vimrc'
 alias vi='nvim -u ~/.vim/vimrc'
 alias vim='nvim -u ~/.vim/vimrc'
 

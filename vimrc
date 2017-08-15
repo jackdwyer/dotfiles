@@ -121,6 +121,8 @@ Plugin 'sudar/vim-arduino-syntax'
 " Plugin 'hashivim/vim-terraform'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vimwiki/vimwiki'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'zchee/deoplete-go'
 call vundle#end()
 
 """NERDTree
@@ -130,7 +132,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 let g:vim_markdown_folding_disabled=1
-let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_checkers=['flake8 --config=${HOME}/.flake8']
 let g:syntastic_ruby_checkers=['foodcritic']
 let g:syntastic_sh_checkers=['shellcheck']
 let g:syntastic_javascript_checkers=['json_verify'] 
@@ -203,3 +205,6 @@ au BufRead,BufNewFile Apronfile set filetype=yaml
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
 
 au BufRead,BufNewFile *.go set filetype=go
+
+" Use deoplete
+let g:deoplete#enable_at_startup = 1
