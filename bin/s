@@ -1,0 +1,11 @@
+#!/bin/bash
+SCRATCH_FILE=~/.scratch
+if ! [[ -f ${SCRATCH_FILE} ]]; then
+    touch ${SCRATCH_FILE}
+fi
+
+if [[ -z ${1} ]]; then
+    cat ${SCRATCH_FILE}
+else
+    vim ${SCRATCH_FILE}
+fi
