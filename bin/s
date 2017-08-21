@@ -7,5 +7,5 @@ fi
 if [[ -z ${1} ]]; then
     cat ${SCRATCH_FILE}
 else
-    vim ${SCRATCH_FILE}
+    vi ${SCRATCH_FILE}
 fi
