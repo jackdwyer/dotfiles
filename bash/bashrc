@@ -44,7 +44,7 @@ function user_at_host() {
 
 function check_for_updates() {
   if [[ -f /tmp/.UPDATE_DOTFILES ]]; then
-    echo -r "${bldred}DOTFILE UPDATE${txtrst}"
+    echo -e "[${bldred}DOTFILE UPDATE${txtrst}]"
   fi
 }
 
