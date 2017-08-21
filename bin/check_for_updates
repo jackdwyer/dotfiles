@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [[ $(cd ${DOT_DIR} && diff <(git rev-parse origin/master) <(git rev-parse HEAD); echo $?) -ne 0 ]]; then
+  touch /tmp/.UPDATE_DOTFILES
+fi

@@ -42,13 +42,19 @@ function user_at_host() {
   echo -e "${bldgrn}${USER}@$(hostname)${txtrst}"
 }
 
+function check_for_updates() {
+  if [[ -f /tmp/.UPDATE_DOTFILES ]]; then
+    echo -r "${bldred}DOTFILE UPDATE${txtrst}"
+  fi
+}
+
 function am_i_ssh() {
   if [[ ! -z ${SSH_CONNECTION} ]]; then
     echo -e "${bakred}${bldwht} ${undwht}SSH${txtrst}${bakred} ${txtrst}"
   fi
 }
 
-LINE1='$(date +%s)$(git_branch)$(aws_account)[$(user_at_host)][\w]'
+LINE1='$(date +%s)$(check_for_updates)$(git_branch)$(aws_account)[$(user_at_host)][\w]'
 LINE2="$(am_i_ssh)\[$bldblu\]$ \[$txtrst\]"
 
 PS1="$LINE1\n$LINE2"
