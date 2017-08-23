@@ -15,7 +15,6 @@ function d() {
   fi
 }
 
-
 function p() {
   if [[ ${1} == '-h' || ${1} == '--help' ]]; then
     echo "usage: p [OPTION]"
