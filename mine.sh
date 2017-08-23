@@ -37,12 +37,22 @@ function settings() {
 }
 
 function vc() {
+  if [[ $1 == "-h" ]]; then
+    echo "vc         python2"
+    echo "vc 3       python3"
+    return
+  fi
+  args=""
+  if [[ $1 == 3 ]]; then
+    args="-p $(which python3)"
+  fi
+
   repo=$(basename $(pwd))
 
   if [[ -d "venv-${repo}" ]]; then
     source "venv-${repo}/bin/activate"
   else
-    virtualenv "venv-${repo}"
+    virtualenv ${args} "venv-${repo}"
     source "venv-${repo}/bin/activate"
   fi
 }
