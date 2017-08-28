@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "Terminus:pixelsize=30:antialias=false:autohint=true";
-static int borderpx = 2;
+char font[] = "Terminus:pixelsize=22:antialias=false:autohint=true";
+int borderpx = 2;
 
 /*
  * What program is execed by st depends of these precedence rules:
