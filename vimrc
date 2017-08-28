@@ -132,17 +132,20 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 let g:vim_markdown_folding_disabled=1
+
+let g:indentLine_color_term = 245
+let g:indentLine_char = '¦'
+let g:indentLine_enabled = 1
+
 let g:syntastic_python_checkers=['flake8 --config=${HOME}/.flake8']
 let g:syntastic_ruby_checkers=['foodcritic']
 let g:syntastic_sh_checkers=['shellcheck']
 let g:syntastic_javascript_checkers=['json_verify'] 
-" let g:syntastic_cpp_checkers=['']
-let g:indentLine_color_term = 245
-let g:indentLine_char = '¦'
-let g:indentLine_enabled = 1
-let g:syntastic_debug = 1
 let g:syntastic_check_on_w = 1
-
+let g:syntastic_debug = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -150,10 +153,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
 
 set background=dark
 highlight Comment    ctermfg=7 ctermbg=160 cterm=bold
@@ -193,7 +192,7 @@ au FileType javascript setl sw=2 sts=2 et
 " command Todo Simplenote -o todo
 
 " disable ctrl+a int increment as its fuckin annoying when in tmux 
-map <C-a> <Nop>
+" map <C-a> <Nop>
 
 " force arduino detection
 au BufRead,BufNewFile *.ino,*.pde set filetype=arduino
@@ -208,3 +207,6 @@ au BufRead,BufNewFile *.go set filetype=go
 
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
+
+" ctrl n, open NERDTree
+map <C-n> :NERDTreeToggle<CR>
