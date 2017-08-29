@@ -1,15 +1,16 @@
 .PHONY: st
-all: folders dotfiles st tools vim-plugins
-
-folders:
-	mkdir -p $(HOME)/{bin,tools,programming,.i3,.vim}
-
-vim-plugins:
-	nvim -u $(HOME)/.vim/vimrc -c VundleInstall +qall
+all: folders dotfiles tools vim-plugins
+phat: all st i3-folders vim-folders
 
 SHELL=/bin/bash
 dotfiles:
 	./install.sh
+
+i3-folders:
+	mkdir -p $(HOME)/{.i3}
+
+folders:
+	mkdir -p $(HOME)/{bin,tools,programming}
 
 st:
 	git clone git://git.suckless.org/st /tmp/st
@@ -23,3 +24,12 @@ tools:
 	curl -s -o $(HOME)/bin/screenshot https://raw.githubusercontent.com/jackdwyer/s3-screenshot/master/screenshot.sh
 	chmod +x $(HOME)/bin/screenshot
 	echo "[INFO] Setup screenshot configuration"
+
+vim-folders:
+	mkdir -p ${HOME}/{.vim}
+
+vim-plugins: vundle
+	nvim -u $(HOME)/.vim/vimrc -c VundleInstall +qall
+
+vundle: vim-folders
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

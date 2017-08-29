@@ -5,6 +5,10 @@ set synmaxcol=80
 set number
 set numberwidth=3
 
+" disable all beeps
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
 " disable backspace
 inoremap <BS> <Nop>
 " disable delete
