@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $(cd ${DOT_DIR} && diff <(git rev-parse origin/master) <(git rev-parse HEAD) &>/dev/null; echo $?) -ne 0 ]]; then
+if [[ $(cd ${DOT_DIR} && diff <(git ls-remote https://github.com/jackdwyer/dotfiles.git | awk 'NR==1{print $1}') <(git rev-parse HEAD) &>/dev/null; echo $?) -ne 0 ]]; then
   touch /tmp/.UPDATE_DOTFILES
 else
   rm /tmp/.UPDATE_DOTFILES &>/dev/null
