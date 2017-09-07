@@ -1,6 +1,6 @@
 " syntax on
 "Syntax highlighting lagging vim due to long lines
-set synmaxcol=80
+set synmaxcol=160
 " Line numbers on
 set number
 set numberwidth=3
