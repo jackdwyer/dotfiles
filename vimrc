@@ -141,16 +141,6 @@ let g:indentLine_color_term = 245
 let g:indentLine_char = '¦'
 let g:indentLine_enabled = 1
 
-let g:syntastic_python_checkers=['flake8 --config=${HOME}/.flake8']
-let g:syntastic_ruby_checkers=['foodcritic']
-let g:syntastic_sh_checkers=['shellcheck']
-let g:syntastic_javascript_checkers=['json_verify'] 
-let g:syntastic_check_on_w = 1
-let g:syntastic_debug = 0
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 " set statusline=%f\ -\ FileType:\ %y
@@ -214,3 +204,18 @@ let g:deoplete#enable_at_startup = 1
 
 " ctrl n, open NERDTree
 map <C-n> :NERDTreeToggle<CR>
+
+" let g:syntastic_python_checkers=['/usr/bin/flake8 --config=\$\{HOME\}/.flake8']
+" let g:syntastic_python_checkers = ['pylint']
+
+let g:syntastic_ruby_checkers=['foodcritic']
+let g:syntastic_sh_checkers=['shellcheck']
+let g:syntastic_javascript_checkers=['json_verify'] 
+let g:syntastic_debug = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_w = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
+" https://github.com/vim-syntastic/syntastic/issues/1391
+noremap :w<CR> :w<CR>:SyntasticCheck<CR>
