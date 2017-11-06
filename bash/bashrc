@@ -1,6 +1,9 @@
 # if interactive, else do nothing
 [[ $- != *i* ]] && return
 
+# auto start tmux
+[[ -z ${TMUX} ]] && exec tmux
+
 DIR=$HOME
 export DOT_DIR=$DIR/dotfiles
 
