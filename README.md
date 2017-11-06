@@ -8,8 +8,9 @@
     - [Full](#full)
 3. [Post](#post)
     - [Tweet](#tweet)
-4. [TODOs](#todos)
-5. [Dependencies](#dependencies)
+4. [Dropbox](#dropbox)
+5. [TODOs](#todos)
+6. [Dependencies](#dependencies)
 
 
 ## Setup
@@ -68,6 +69,15 @@ includes st & i3
 ```
 $ make phat
 $ source ~/.bashrc
+```
+## Dropbox
+Install via: [https://www.dropbox.com/install-linux](https://www.dropbox.com/install-linux)
+```bash
+TMPFILE=$(mktemp)
+crontab -l > ${TMPFILE}
+echo "@reboot ${HOME}/.dropbox-dist/dropboxd" >> ${TMPFILE}
+crontab ${TMPFILE}
+ln -s ${HOME}/Dropbox/vimwiki ${HOME}/vimwiki
 ```
 
 ## Post
