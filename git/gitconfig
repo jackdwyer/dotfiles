@@ -1,0 +1,6 @@
+[user]
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    cl = clone
