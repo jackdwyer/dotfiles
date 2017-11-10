@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if ! [[ $(cd ${DOT_DIR}; git status --porcelain | grep -q 'M') ]]; then
+    touch /tmp/.DOTFILE_MODIFIED
+else
+    rm /tmp/.DOTFILE_MODIFIED &> /dev/null
+fi
