@@ -30,6 +30,7 @@ make_link "${DOT_DIR}/vimrc" "${HOME}/.vim/vimrc"
 make_link "${DOT_DIR}/Xresources" "${HOME}/.Xresources"
 make_link "${DOT_DIR}/i3/config" "${HOME}/.i3/config"
 make_link "${DOT_DIR}/flake8" "${HOME}/.flake8"
+make_link "${DOT_DIR}/git/gitconfig" "${HOME}/.gitconfig"
 
 touch "${DOT_DIR}/work.sh"
 touch "${DOT_DIR}/secrets.sh"
