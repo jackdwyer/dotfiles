@@ -191,6 +191,7 @@ au FileType javascript setl sw=2 sts=2 et
 " force arduino detection
 au BufRead,BufNewFile *.ino,*.pde set filetype=arduino
 au FileType arduino setl sw=2 sts=2 et
+au FileType cpp setl sw=2 sts=2 et
 
 " force hcl detection
 au BufRead,BufNewFile *.tf set filetype=hcl
@@ -211,6 +212,7 @@ map <C-n> :NERDTreeToggle<CR>
 let g:syntastic_ruby_checkers=['foodcritic']
 let g:syntastic_sh_checkers=['shellcheck']
 let g:syntastic_javascript_checkers=['json_verify'] 
+let g:syntastic_cpp_checkers=[''] 
 let g:syntastic_debug = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_w = 1

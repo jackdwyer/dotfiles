@@ -1,5 +1,6 @@
 [user]
 [alias]
+    a = add
     co = checkout
     ci = commit
     st = status
