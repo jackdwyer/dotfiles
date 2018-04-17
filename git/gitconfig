@@ -5,3 +5,4 @@
     ci = commit
     st = status
     cl = clone
+    d = diff
