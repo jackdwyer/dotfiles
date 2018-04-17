@@ -28,8 +28,10 @@ tools:
 vim-folders:
 	mkdir -p ${HOME}/{.vim}
 
-vim-plugins: vundle
+vim-plugins:
 	nvim -u $(HOME)/.vim/vimrc -c VundleInstall +qall
 
 vundle: vim-folders
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+vim-all: vim-folders vundle vim-plugins

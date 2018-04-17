@@ -10,7 +10,7 @@ set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
 " disable backspace
-inoremap <BS> <Nop>
+" inoremap <BS> <Nop>
 " disable delete
 inoremap <Del> <Nop>
 
@@ -18,7 +18,7 @@ inoremap <Del> <Nop>
 set colorcolumn=80
 
 "so it pastes nicely
-set paste
+" set paste
 set smartindent
 
 " Set tabs to 4 spaces, with smart indent
@@ -98,6 +98,10 @@ syntax enable
 filetype plugin indent on 
 filetype on
 
+""" deal with folding
+set foldmethod=syntax
+
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'scrooloose/nerdtree'
@@ -119,14 +123,16 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'elzr/vim-json'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'b4b4r07/vim-hcl'
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'mrtazz/simplenote.vim'
 Plugin 'sudar/vim-arduino-syntax'
 " Plugin 'hashivim/vim-terraform'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vimwiki/vimwiki'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'zchee/deoplete-go'
+" Plugin 'Shougo/deoplete.nvim'
+" Plugin 'zchee/deoplete-go'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()
 
 """NERDTree
@@ -170,6 +176,7 @@ let vim_markdown_preview_use_xdg_open=1
 let g:ctrl_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+au FileType c setl sw=4 sts=4 et
 au FileType yaml setl sw=2 sts=2 et
 au FileType yml setl sw=2 sts=2 et
 au FileType tf setl sw=2 sts=2 et
@@ -192,6 +199,9 @@ au FileType javascript setl sw=2 sts=2 et
 au BufRead,BufNewFile *.ino,*.pde set filetype=arduino
 au FileType arduino setl sw=2 sts=2 et
 au FileType cpp setl sw=2 sts=2 et
+
+" force bats -> sh
+au BufRead,BufNewFile *.bats set filetype=sh
 
 " force hcl detection
 au BufRead,BufNewFile *.tf set filetype=hcl
@@ -219,5 +229,10 @@ let g:syntastic_check_on_w = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
+let g:syntastic_ignore_files = ['.*\.bats$']
+
 " https://github.com/vim-syntastic/syntastic/issues/1391
 noremap :w<CR> :w<CR>:SyntasticCheck<CR>
+
+" you complete me stuff https://github.com/Valloric/YouCompleteMe#the-gycm_autoclose_preview_window_after_completion-option
+" let g:ycm_autoclose_preview_window_after_completion = 0

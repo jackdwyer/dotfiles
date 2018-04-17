@@ -39,12 +39,12 @@ function settings() {
 function vc() {
   if [[ $1 == "-h" ]]; then
     echo "vc         python2"
-    echo "vc 3       python3"
+    echo "vc 3       python36"
     return
   fi
   args=""
   if [[ $1 == 3 ]]; then
-    args="-p $(which python3)"
+    args="-p $(which python36)"
   fi
 
   repo=$(basename $(pwd))
@@ -65,6 +65,7 @@ function todos() {
 test_http() {
   ENDPOINT=${1}
   HTTP_RESP=${2:-200}
+  TIME_OUT=${3:-1}
   RED='\033[1;31m'
   RST='\033[0m'
   while :; do
@@ -74,6 +75,6 @@ test_http() {
     else
       printf " ${RED}FAIL ${VAL}${RST} "
     fi
-    sleep 1s;
+    sleep ${TIME_OUT}s;
   done
 }
