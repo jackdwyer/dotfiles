@@ -9,14 +9,15 @@
 3. [Post](#post)
     - [Tweet](#tweet)
 4. [Dropbox](#dropbox)
-5. [TODOs](#todos)
-6. [Dependencies](#dependencies)
+6. [Firefox](#firefox)
+6. [TODOs](#todos)
+7. [Dependencies](#dependencies)
 
 
 ## Setup
 ### Fedora
 ```bash
-$ dnf install curl direnv dmenu feh git go i3 i3lock inotify-tools jq \
+$ dnf install at curl direnv dmenu feh git go i3 i3lock inotify-tools jq \
   libX11-devel libXft-devel neovim nmap openvpn python-virtualenv screen \
   scrot ShellCheck sshfs terminus-fonts the_silver_searcher tmux vagrant vlc \
   volumeicon weechat xclip xorg-x11-proto-devel xterm
@@ -78,6 +79,13 @@ crontab -l > ${TMPFILE}
 echo "@reboot ${HOME}/.dropbox-dist/dropboxd" >> ${TMPFILE}
 crontab ${TMPFILE}
 ln -s ${HOME}/Dropbox/vimwiki ${HOME}/vimwiki
+```
+
+## Firefox
+Disable autohide in fullscreen
+```
+about:config
+browser.fullscreen.autohide FALSE
 ```
 
 ## Post
