@@ -11,8 +11,8 @@
 
 # TODO: alt if using thinkpad keyboard, windows if using poker 2/3. need a better
 # way of switching this 
-set $mod Mod4
-# set $mod Mod1
+# set $mod Mod4
+set $mod Mod1
 
 
 # font for window titles. ISO 10646 = Unicode
@@ -225,7 +225,7 @@ bar {
     }
         status_command i3status
 #         status_command i3status -c $HOME/.i3/status | $HOME/.i3/venv-i3/bin/python $HOME/.i3/wrapper.py
-        font pango:Terminus 18
+        font pango:Terminus 14
 }
 
 
