@@ -231,6 +231,9 @@ let g:syntastic_check_on_wq = 1
 
 let g:syntastic_ignore_files = ['.*\.bats$']
 
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                     \ 'syntax': 'markdown', 'ext': '.md'}]
+
 " https://github.com/vim-syntastic/syntastic/issues/1391
 noremap :w<CR> :w<CR>:SyntasticCheck<CR>
 

@@ -78,3 +78,12 @@ test_http() {
     sleep ${TIME_OUT}s;
   done
 }
+
+pomodoro_techinque() {
+  sleep 1200 #20min
+  notify-send "20min is up!"
+}
+
+pt() {
+  pomodoro_techinque &
+}
