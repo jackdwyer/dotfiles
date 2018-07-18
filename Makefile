@@ -1,13 +1,13 @@
 .PHONY: st
 all: folders dotfiles tools vim-plugins
-phat: all st i3-folders vim-folders
+phat: all st i3-folders vim-folders vundle
 
 SHELL=/bin/bash
 dotfiles:
 	./install.sh
 
 i3-folders:
-	mkdir -p $(HOME)/{.i3}
+	mkdir -p $(HOME)/.i3
 
 folders:
 	mkdir -p $(HOME)/{bin,tools,programming}
@@ -26,7 +26,7 @@ tools:
 	echo "[INFO] Setup screenshot configuration"
 
 vim-folders:
-	mkdir -p ${HOME}/{.vim}
+	mkdir -p ${HOME}/.vim
 
 vim-plugins:
 	nvim -u $(HOME)/.vim/vimrc -c VundleInstall +qall

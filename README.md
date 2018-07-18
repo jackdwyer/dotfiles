@@ -83,8 +83,9 @@ ln -s ${HOME}/Dropbox/vimwiki ${HOME}/vimwiki
 
 ## Firefox
 Disable autohide in fullscreen
+
+via: [about:config](about:config)
 ```
-about:config
 browser.fullscreen.autohide FALSE
 ```
 
