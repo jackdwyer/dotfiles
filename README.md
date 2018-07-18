@@ -89,6 +89,8 @@ via: [about:config](about:config)
 browser.fullscreen.autohide FALSE
 ```
 
+Disable Password manager -> [about:preferences#privacy](about:preferences#privacy)
+
 ## Post
 ### tweet
 ```bash
