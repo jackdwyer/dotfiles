@@ -6,3 +6,6 @@
     st = status
     cl = clone
     d = diff
+[user]
+	name = Jack Dwyer
+	email = jackjack.dwyer@gmail.com
