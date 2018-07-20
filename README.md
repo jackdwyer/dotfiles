@@ -2,6 +2,7 @@
 ## Contents
 1. [Setup](#setup)
     - [Fedora](#fedora)
+        - [volumeicon](#volumeicon)
     - [Windows/Linux Subsystem](#windowslinux-subsystem)
 2. [Installation](#installation)
     - [Minimal](#minimal)
@@ -23,6 +24,9 @@ $ dnf install at curl direnv dmenu feh git go i3 i3lock inotify-tools jq \
   volumeicon weechat xclip xorg-x11-proto-devel xterm
 $ pip install flake8
 ```
+
+#### volumeicon
+Preferences -> Status Icons -> Left Mouse Button | Show Silder
 
 ### Windows/Linux Subsystem
 #### caps2esc
