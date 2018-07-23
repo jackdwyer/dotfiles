@@ -27,7 +27,7 @@ $ pip install --user neovim flake8
 ```
 
 ### YouCompleteMe
-[https://github.com/Valloric/YouCompleteMe#fedora-linux-x64](Fedora YouCompleteMe Installation Instructions)
+[https://github.com/Valloric/YouCompleteMe#fedora-linux-x64](https://github.com/Valloric/YouCompleteMe#fedora-linux-x64)
 
 #### volumeicon
 Preferences -> Status Icons -> Left Mouse Button | Show Silder
