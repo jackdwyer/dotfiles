@@ -2,7 +2,7 @@
 ## Contents
 1. [Setup](#setup)
     - [Fedora](#fedora)
-        - YouCompleteMe(#youcompleteme)
+        - [YouCompleteMe](#youcompleteme)
         - [volumeicon](#volumeicon)
     - [Windows/Linux Subsystem](#windowslinux-subsystem)
 2. [Installation](#installation)
