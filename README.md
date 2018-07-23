@@ -22,7 +22,7 @@ $ dnf install at curl direnv dmenu feh git go i3 i3lock inotify-tools jq \
   libX11-devel libXft-devel neovim nmap openvpn python-virtualenv screen \
   scrot ShellCheck sshfs terminus-fonts the_silver_searcher tmux vagrant vlc \
   volumeicon weechat xclip xorg-x11-proto-devel xterm
-$ pip install flake8
+$ pip install --user neovim flake8
 ```
 
 #### volumeicon
