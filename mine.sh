@@ -81,7 +81,7 @@ test_http() {
 
 pomodoro_techinque() {
   sleep 1200 #20min
-  notify-send "20min is up!"
+  notify-send "pomodoro" "20min is up!"
 }
 
 pt() {

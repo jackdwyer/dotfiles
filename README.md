@@ -2,6 +2,7 @@
 ## Contents
 1. [Setup](#setup)
     - [Fedora](#fedora)
+        - YouCompleteMe(#youcompleteme)
         - [volumeicon](#volumeicon)
     - [Windows/Linux Subsystem](#windowslinux-subsystem)
 2. [Installation](#installation)
@@ -24,6 +25,9 @@ $ dnf install at curl direnv dmenu feh git go i3 i3lock inotify-tools jq \
   volumeicon weechat xclip xorg-x11-proto-devel xterm
 $ pip install --user neovim flake8
 ```
+
+### YouCompleteMe
+[https://github.com/Valloric/YouCompleteMe#fedora-linux-x64](Fedora YouCompleteMe Installation Instructions)
 
 #### volumeicon
 Preferences -> Status Icons -> Left Mouse Button | Show Silder
