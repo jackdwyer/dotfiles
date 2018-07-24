@@ -1,4 +1,8 @@
-" syntax on
+set nocompatible
+syntax on
+
+let mapleader=' '
+
 "Syntax highlighting lagging vim due to long lines
 set synmaxcol=160
 " Line numbers on
@@ -10,7 +14,7 @@ set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
 " disable backspace
-" inoremap <BS> <Nop>
+inoremap <BS> <Nop>
 " disable delete
 inoremap <Del> <Nop>
 
@@ -27,11 +31,6 @@ set shiftwidth=4
 set expandtab
 set autoindent
 
-" set sw=4 ts=4 sts=4
-" autocmd FileType rb :setlocal sw=2 ts=2 sts=2
-" so can paste in vim fine
-" set paste 
-
 " 256 color 
 set t_Co=256
 
@@ -40,27 +39,7 @@ set noswapfile
 
 set laststatus=2
 
-function! ForceReload()
-    silent !curl http://localhost:9000/reload
-    redraw!
-endfunction
-
-" Save with ctrl-S
-" Use CTRL-S for saving, also in Insert mode
-noremap <C-S> :w<CR>
-vnoremap <C-S> <C-C>:update<CR>
-inoremap <C-S> <Esc>:w<CR>
-
-set nocompatible
-" execute pathogen#infect()
-" Color Scheme Setup -> Solarized Details
-" colorscheme solarized
-
-" set background=light
-" colorscheme aldmeris
-
 let g:aldmeris_termcolors = "tango"
-" let g:indentLine_color_term=239
 
 "so i can yank to clipboard only for vim 7.3.74+
 set clipboard=unnamedplus 
@@ -80,7 +59,6 @@ command -bang Q quit<bang>
 
 command! W write
 
-let mapleader=' '
 set hidden
 nmap <leader>T :enew<cr>
 nmap <leader>l :bnext<CR>
@@ -92,15 +70,12 @@ nmap <leader>bl :ls<CR>
 nmap <leader>a :Ack 
 nmap <leader>p :set paste <CR>i
 
-
-
 syntax enable
 filetype plugin indent on 
 filetype on
 
 """ deal with folding
 set foldmethod=syntax
-
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -115,11 +90,10 @@ Plugin 'mileszs/ack.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'markcornick/vim-bats'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'bling/vim-airline'
+" Plugin 'bling/vim-airline'
 " Plugin 'davidhalter/jedi-vim'
 " Plugin 'chase/vim-ansible-yaml'
 Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'elzr/vim-json'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'b4b4r07/vim-hcl'
@@ -139,16 +113,13 @@ call vundle#end()
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 autocmd StdinReadPre * let s:std_in=1
 "" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-let g:vim_markdown_folding_disabled=1
 
 let g:indentLine_color_term = 245
 let g:indentLine_char = '¦'
 let g:indentLine_enabled = 1
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#fnamemod = ':t'
 " set statusline=%f\ -\ FileType:\ %y
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
@@ -168,11 +139,6 @@ let g:vim_json_syntax_conceal = 0
 " force coffeescript ft
 au BufNewFile,BufRead *.coffee set filetype=coffee
 
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_github=1
-let vim_markdown_preview_browser='google-chrome'
-let vim_markdown_preview_use_xdg_open=1
-
 let g:ctrl_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -187,10 +153,6 @@ au FileType css setl sw=2 sts=2 et
 au FileType html setl sw=2 sts=2 et
 au FileType json setl sw=2 sts=2 et
 au FileType javascript setl sw=2 sts=2 et
-
-" source ~/.simplenoterc 
- 
-" command Todo Simplenote -o todo
 
 " disable ctrl+a int increment as its fuckin annoying when in tmux 
 " map <C-a> <Nop>
