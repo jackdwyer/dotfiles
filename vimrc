@@ -105,7 +105,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vimwiki/vimwiki'
 " Plugin 'Shougo/deoplete.nvim'
 " Plugin 'zchee/deoplete-go'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 call vundle#end()
 
@@ -133,44 +133,15 @@ highlight Comment    ctermfg=7 ctermbg=160 cterm=bold
 au BufWritePost * if getline(1) =~ "^#!" | silent !chmod +x <afile>
 
 " json being set to javascript, not loading vim-json
-au BufNewFile,BufRead *.json set filetype=json
 let g:vim_json_syntax_conceal = 0
 
 " force coffeescript ft
-au BufNewFile,BufRead *.coffee set filetype=coffee
 
 let g:ctrl_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-au FileType c setl sw=4 sts=4 et
-au FileType yaml setl sw=2 sts=2 et
-au FileType yml setl sw=2 sts=2 et
-au FileType tf setl sw=2 sts=2 et
-au FileType sh setl sw=2 sts=2 et
-au FileType tf setl sw=2 sts=2 et
-au FileType ruby setl sw=2 sts=2 et
-au FileType css setl sw=2 sts=2 et
-au FileType html setl sw=2 sts=2 et
-au FileType json setl sw=2 sts=2 et
-au FileType javascript setl sw=2 sts=2 et
-
 " disable ctrl+a int increment as its fuckin annoying when in tmux 
 " map <C-a> <Nop>
-
-" force arduino detection
-au BufRead,BufNewFile *.ino,*.pde set filetype=arduino
-au FileType arduino setl sw=2 sts=2 et
-au FileType cpp setl sw=2 sts=2 et
-
-" force bats -> sh
-au BufRead,BufNewFile *.bats set filetype=sh
-
-" force hcl detection
-au BufRead,BufNewFile *.tf set filetype=hcl
-au BufRead,BufNewFile Apronfile set filetype=yaml
-au BufRead,BufNewFile Vagrantfile set filetype=ruby
-
-au BufRead,BufNewFile *.go set filetype=go
 
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
@@ -201,3 +172,27 @@ noremap :w<CR> :w<CR>:SyntasticCheck<CR>
 
 " you complete me stuff https://github.com/Valloric/YouCompleteMe#the-gycm_autoclose_preview_window_after_completion-option
 " let g:ycm_autoclose_preview_window_after_completion = 0
+
+au FileType arduino setl sw=2 sts=2 et
+au FileType cpp setl sw=2 sts=2 et
+au FileType c setl sw=4 sts=4 et
+au FileType yaml setl sw=2 sts=2 et
+au FileType yml setl sw=2 sts=2 et
+au FileType tf setl sw=2 sts=2 et
+au FileType sh setl sw=2 sts=2 et
+au FileType tf setl sw=2 sts=2 et
+au FileType ruby setl sw=2 sts=2 et
+au FileType css setl sw=2 sts=2 et
+au FileType html setl sw=2 sts=2 et
+au FileType json setl sw=2 sts=2 et
+au FileType javascript setl sw=2 sts=2 et
+
+au BufEnter,BufRead,BufNewFile *.ino,*.pde set filetype=arduino
+au BufEnter,BufRead,BufNewFile *.bats set filetype=sh
+au BufEnter,BufRead,BufNewFile *.tf set filetype=hcl
+au BufEnter,BufRead,BufNewFile Apronfile set filetype=yaml
+au BufEnter,BufRead,BufNewFile Vagrantfile set filetype=ruby
+au BufEnter,BufRead,BufNewFile *.go set filetype=go
+au BufEnter,BufRead,BufNewFile *.coffee set filetype=coffee
+au BufEnter,BufRead,BufNewFile *.json set filetype=json
+au BufEnter,BufRead,BufNewFile *.md set filetype=markdown
