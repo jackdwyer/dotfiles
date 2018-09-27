@@ -44,7 +44,7 @@ function vc() {
   fi
   args=""
   if [[ $1 == 3 ]]; then
-    args="-p $(which python36)"
+    args="-p $(which python3.6)"
   fi
 
   repo=$(basename $(pwd))
@@ -86,4 +86,11 @@ pomodoro_techinque() {
 
 pt() {
   pomodoro_techinque &
+}
+
+activate() {
+  pushd $(pwd)
+  cd $(pipenv --venv)
+  source ./bin/activate
+  popd
 }

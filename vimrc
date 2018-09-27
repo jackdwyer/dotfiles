@@ -9,12 +9,13 @@ set synmaxcol=160
 set number
 set numberwidth=3
 
+set showtabline=1
 " disable all beeps
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
 " disable backspace
-inoremap <BS> <Nop>
+" inoremap <BS> <Nop>
 " disable delete
 inoremap <Del> <Nop>
 
@@ -61,14 +62,18 @@ command! W write
 
 set hidden
 nmap <leader>T :enew<cr>
-nmap <leader>l :bnext<CR>
-nmap <leader>h :bprevious<CR>
+"" nmap <leader>l :bnext<CR>
+"" nmap <leader>h :bprevious<CR>
 """nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
 
 nmap <leader>a :Ack 
 nmap <leader>p :set paste <CR>i
+
+"" move between tabs
+noremap <leader>l gt
+noremap <leader>h gT
 
 syntax enable
 filetype plugin indent on 
@@ -90,7 +95,8 @@ Plugin 'mileszs/ack.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'markcornick/vim-bats'
 Plugin 'flazz/vim-colorschemes'
-" Plugin 'bling/vim-airline'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'davidhalter/jedi-vim'
 " Plugin 'chase/vim-ansible-yaml'
 Plugin 'ekalinin/Dockerfile.vim'
@@ -107,6 +113,7 @@ Plugin 'vimwiki/vimwiki'
 " Plugin 'zchee/deoplete-go'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
 
 """NERDTree
@@ -149,9 +156,8 @@ let g:deoplete#enable_at_startup = 1
 " ctrl n, open NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
-" let g:syntastic_python_checkers=['/usr/bin/flake8 --config=\$\{HOME\}/.flake8']
 " let g:syntastic_python_checkers = ['pylint']
-
+" let g:syntastic_python_checkers=['python -m flake8']
 let g:syntastic_ruby_checkers=['foodcritic']
 let g:syntastic_sh_checkers=['shellcheck']
 let g:syntastic_javascript_checkers=['json_verify'] 
@@ -184,6 +190,7 @@ au FileType tf setl sw=2 sts=2 et
 au FileType ruby setl sw=2 sts=2 et
 au FileType css setl sw=2 sts=2 et
 au FileType html setl sw=2 sts=2 et
+au FileType htmldjango setl sw=2 sts=2 et
 au FileType json setl sw=2 sts=2 et
 au FileType javascript setl sw=2 sts=2 et
 
@@ -196,3 +203,13 @@ au BufEnter,BufRead,BufNewFile *.go set filetype=go
 au BufEnter,BufRead,BufNewFile *.coffee set filetype=coffee
 au BufEnter,BufRead,BufNewFile *.json set filetype=json
 au BufEnter,BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufEnter,BufRead,BufNewFile *.md set filetype=markdown
+
+augroup filetypedetect
+  au! BufRead,BufNewFile */vimwiki/*        set filetype=markdown
+augroup END
+
+colorscheme solarized
+" not sure why this has to be dark to get light :(
+set background=dark
+let g:airline_solarized_bg='dark'
