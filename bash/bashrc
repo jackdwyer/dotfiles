@@ -16,6 +16,9 @@ source ${DOT_DIR}/secrets.sh
 source ${DOT_DIR}/alias.sh
 
 export PATH=$PATH:$DOT_DIR/bin
+if [[ -d "$HOME/tools/adb-fastboot/platform-tools" ]]; then
+ export PATH="$HOME/tools/adb-fastboot/platform-tools:$PATH"
+fi
 
 export EDITOR=nvim
 
