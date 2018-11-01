@@ -65,10 +65,6 @@ apt-get install curl direnv git inotify-tools jq nmap openvpn \
 ## Installation
 ```
 $ cd ${HOME} && git clone git@github.com:jackdwyer/dotfiles && cd dotfiles
-```
-
-### minimal
-```
 $ make
 $ make vim
 $ make st
