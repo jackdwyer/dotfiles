@@ -1,16 +1,14 @@
 .PHONY: st
-all: folders dotfiles tools vim-plugins
-phat: all st i3-folders vim-folders vundle
+all: folders dotfiles tools
+vim: vundle vim-plugins
+phat: all st vim
 
 SHELL=/bin/bash
 dotfiles:
 	./install.sh
 
-i3-folders:
-	mkdir -p $(HOME)/.i3
-
 folders:
-	mkdir -p $(HOME)/{bin,tools,programming}
+	mkdir -p $(HOME)/{bin,tools,programming,.vim,.i3}
 
 ST_VERSION=0.8.1
 st:

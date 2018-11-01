@@ -19,9 +19,9 @@
 ## Setup
 ### Fedora
 ```bash
-$ dnf install at curl direnv dmenu feh git go i3 i3lock inotify-tools jq \
-  libX11-devel libXft-devel neovim nmap openvpn python-virtualenv screen \
-  scrot ShellCheck sshfs terminus-fonts the_silver_searcher tmux vagrant vlc \
+$ dnf install at arandr curl direnv dmenu feh git go i3 i3lock inotify-tools jq \
+  libX11-devel libXft-devel neovim nmap openvpn patch python-virtualenv screen \
+  scrot ShellCheck sshfs terminus-fonts the_silver_searcher tmux vagrant \
   volumeicon weechat xclip xorg-x11-proto-devel xterm
 $ pip install --user neovim flake8
 ```
@@ -70,13 +70,8 @@ $ cd ${HOME} && git clone git@github.com:jackdwyer/dotfiles && cd dotfiles
 ### minimal
 ```
 $ make
-$ source ~/.bashrc
-```
-
-### Full 
-includes st & i3
-```
-$ make phat
+$ make vim
+$ make st
 $ source ~/.bashrc
 ```
 ## Dropbox
@@ -96,8 +91,24 @@ via: [about:config](about:config)
 ```
 browser.fullscreen.autohide FALSE
 ```
+### Plugins
+- [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
+- [Vimium-FF](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/)
 
 Disable Password manager -> [about:preferences#privacy](about:preferences#privacy)
+
+## Pass
+[Pass](https://www.passwordstore.org/)
+
+Import Key
+```
+gpg2 --import <key>
+gpg2 --edit-key <key id>
+> trust
+```
+
+Clone pass store to `${HOME}/.password-store`
+
 
 ## Post
 ### tweet
@@ -107,8 +118,6 @@ $ mkdir -p ${HOME}/.config/twitter/
 Configure `${HOME}/.config/twitter/auth.conf`
 [https://twitter.com/isjackalive](https://twitter.com/isjackalive)
 
-## TODOS
-[] global git config
 
 ## Dependencies
  - https://github.com/VundleVim/Vundle.vim

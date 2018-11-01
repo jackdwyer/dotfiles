@@ -1,5 +1,5 @@
 #!/bin/bash
-# set -euo pipefail
+set -euo pipefail
 
 DOT_DIR=${HOME}/dotfiles
 
