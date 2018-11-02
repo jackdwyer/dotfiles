@@ -91,7 +91,9 @@ browser.fullscreen.autohide FALSE
 - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
 - [Vimium-FF](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/)
 
+### Personalize
 Disable Password manager -> [about:preferences#privacy](about:preferences#privacy)
+> Block new requests asking to allow notifications
 
 ## Pass
 [Pass](https://www.passwordstore.org/)
