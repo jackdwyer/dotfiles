@@ -81,11 +81,12 @@ ln -s ${HOME}/Dropbox/vimwiki ${HOME}/vimwiki
 ```
 
 ## Firefox
-Disable autohide in fullscreen
-
-via: [about:config](about:config)
+[about:config](about:config)
 ```
 browser.fullscreen.autohide FALSE
+# Disable autohide in fullscreen
+ui.key.menuAccessKeyFocuse FALSE
+# disables alt from showing menu bar
 ```
 ### Plugins
 - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
