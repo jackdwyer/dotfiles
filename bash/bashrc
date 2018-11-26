@@ -26,6 +26,8 @@ eval "$(direnv hook bash)"
 
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 export GOPATH=${HOME}/go
+# make sure python tools are avaliable
+export PATH=${PATH}:${HOME}/.local/bin
 
 function aws_account() {
   if [[ ! -z "${AWS_DEFAULT_PROFILE}" ]]; then
