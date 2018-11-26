@@ -80,7 +80,7 @@ filetype plugin indent on
 filetype on
 
 """ deal with folding
-set foldmethod=syntax
+" set foldmethod=syntax
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -111,9 +111,10 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vimwiki/vimwiki'
 " Plugin 'Shougo/deoplete.nvim'
 " Plugin 'zchee/deoplete-go'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-scripts/groovy.vim'
 call vundle#end()
 
 """NERDTree
