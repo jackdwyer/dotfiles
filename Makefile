@@ -1,4 +1,4 @@
-.PHONY: st
+.PHONY: st firefox
 all: folders dotfiles tools
 vim: vundle vim-plugins
 phat: all st vim
@@ -6,6 +6,11 @@ phat: all st vim
 SHELL=/bin/bash
 dotfiles:
 	./install.sh
+
+FIREFOX_PROFILE_ID=
+firefox:
+	mkdir $(HOME)/.mozilla/firefox/$(FIREFOX_PROFILE_ID).default/chrome
+	cp firefox/userChrome.css $(HOME)/.mozilla/firefox/$(FIREFOX_PROFILE_ID).default/chrome/
 
 folders:
 	mkdir -p $(HOME)/{bin,tools,programming,.vim,.i3}

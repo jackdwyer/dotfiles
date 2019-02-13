@@ -1,0 +1,5 @@
+/* https://support.mozilla.org/en-US/questions/1181537 */
+/* Completely hide the "title changed" notification dot on pinned tabs */
+.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged] {
+  background-image: none !important;
+}
