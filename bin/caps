@@ -1,3 +1,4 @@
 #!/bin/bash
 
 xmodmap -e 'clear lock' -e 'keycode 0x42 = Escape'
+xset r rate 250 30
