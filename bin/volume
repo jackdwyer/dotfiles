@@ -1,13 +1,21 @@
 #!/bin/bash
-
 if [[ "$1" == "up" ]]; then
-  for sink in $(pactl list sinks | grep Sink | cut -d"#" -f2); do
-    pactl set-sink-volume "$sink" +5%
-  done
+  amixer -D pulse sset Master 5%+
 elif [[ "$1" == "down" ]]; then
-  for sink in $(pactl list sinks | grep Sink | cut -d"#" -f2); do
-    pactl set-sink-volume "$sink" -5%
-  done
+  amixer -D pulse sset Master 5%-
 else
-  echo "Unsupported usage"
+  echo "ERROR: Pass param"
+  exit 1
 fi
+
+# if [[ "$1" == "up" ]]; then
+#   for sink in $(pactl list sinks | grep Sink | cut -d"#" -f2); do
+#     pactl set-sink-volume "$sink" +5%
+#   done
+# elif [[ "$1" == "down" ]]; then
+#   for sink in $(pactl list sinks | grep Sink | cut -d"#" -f2); do
+#     pactl set-sink-volume "$sink" -5%
+#   done
+# else
+#   echo "Unsupported usage"
+# fi
