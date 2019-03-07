@@ -94,3 +94,17 @@ activate() {
   source ./bin/activate
   popd
 }
+
+kbd_backlight() {
+  sudo su -c "echo $1 > /sys/class/leds/tpacpi\:\:kbd_backlight/brightness"
+}
+
+backlight_brightness_power() {
+  MAX_VAL=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+  SET_VAL=${1}
+  if [[ -z ${SET_VAL} ]]; then
+    echo "ERROR: provide a value between 0 and ${MAX_VAL}"
+    return
+  fi
+  sudo su -c "echo ${SET_VAL} > /sys/class/backlight/intel_backlight/brightness"
+}

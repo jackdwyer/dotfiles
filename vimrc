@@ -103,7 +103,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elzr/vim-json'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'b4b4r07/vim-hcl'
-" Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'mrtazz/simplenote.vim'
 Plugin 'sudar/vim-arduino-syntax'
 " Plugin 'hashivim/vim-terraform'
@@ -145,7 +145,7 @@ let g:vim_json_syntax_conceal = 0
 
 " force coffeescript ft
 
-let g:ctrl_map = '<c-p>'
+let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " disable ctrl+a int increment as its fuckin annoying when in tmux 
@@ -177,8 +177,8 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 " https://github.com/vim-syntastic/syntastic/issues/1391
 noremap :w<CR> :w<CR>:SyntasticCheck<CR>
 
-" you complete me stuff https://github.com/Valloric/YouCompleteMe#the-gycm_autoclose_preview_window_after_completion-option
-" let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 au FileType arduino setl sw=2 sts=2 et
 au FileType cpp setl sw=2 sts=2 et

@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Terminus:pixelsize=16:antialias=false:autohint=true";
-//  static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+// static char *font = "Terminus:pixelsize=16:antialias=false:autohint=true";
+static char *font = "Liberation Mono:pixelsize=14:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -84,33 +84,26 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
-const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"#9E5641",
-	"green3",
-	"yellow3",
-	"blue2",
-	"#956D9D",
-	"cyan3",
-	"gray90",
-
-	/* 8 bright colors */
-	"gray50",
-	"#9E5641",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"#956D9D",
-	"cyan",
-	"white",
-
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+static const char *colorname[] = {
+  /* solarized light */
+  "#eee8d5",  /*  0: black    */
+  "#dc322f",  /*  1: red      */
+  "#859900",  /*  2: green    */
+  "#b58900",  /*  3: yellow   */
+  "#268bd2",  /*  4: blue     */
+  "#d33682",  /*  5: magenta  */
+  "#2aa198",  /*  6: cyan     */
+  "#073642",  /*  7: white    */
+  "#fdf6e3",  /*  8: brblack  */
+  "#cb4b16",  /*  9: brred    */
+  "#93a1a1",  /* 10: brgreen  */
+  "#839496",  /* 11: bryellow */
+  "#657b83",  /* 12: brblue   */
+  "#6c71c4",  /* 13: brmagenta*/
+  "#586e75",  /* 14: brcyan   */
+  "#002b36",  /* 15: brwhite  */
 };
+
 
 /*
  * Default colors (colorname index)

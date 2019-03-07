@@ -29,11 +29,11 @@ export GOPATH=${HOME}/go
 # make sure python tools are avaliable
 export PATH=${PATH}:${HOME}/.local/bin
 
-function aws_account() {
-  if [[ ! -z "${AWS_DEFAULT_PROFILE}" ]]; then
-    echo -e "[${bldcyn}${AWS_DEFAULT_PROFILE}${txtrst}]"
-  fi
-}
+# function aws_account() {
+#   if [[ ! -z "${AWS_DEFAULT_PROFILE}" ]]; then
+#     echo -e "[${bldcyn}${AWS_DEFAULT_PROFILE}${txtrst}]"
+#   fi
+# }
 
 function git_branch() {
   local _branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
@@ -47,19 +47,22 @@ function git_branch() {
 }
 
 function user_at_host() {
-  echo -e "${bldgrn}${USER}@$(hostname)${txtrst}"
+  echo -e "${bldgrn}${USER}@${HOSTNAME}${txtrst}"
 }
 
 function dotfile_updates() {
-  if [[ -f /tmp/.UPDATE_DOTFILES ]]; then
-    echo -e "[${bldred}DU${txtrst}]"
-  fi
+  # if [[ -f /tmp/.UPDATE_DOTFILES ]]; then
+  #   echo -e "[${bldred}DU${txtrst}]"
+  # fi
+  :
 }
 
+
 function dotfile_modified() {
-  if [[ -f /tmp/.DOTFILE_MODIFIED ]]; then
-    echo -e "[${bldblu}DM${txtrst}]"
-  fi
+  # if [[ -f /tmp/.DOTFILE_MODIFIED ]]; then
+  #   echo -e "[${bldblu}DM${txtrst}]"
+  # fi
+  :
 }
 
 function am_i_ssh() {
@@ -68,7 +71,7 @@ function am_i_ssh() {
   fi
 }
 
-LINE1='$(date +%s)$(dotfile_updates)$(dotfile_modified)$(git_branch)$(aws_account)[$(user_at_host)][\w]'
+LINE1='$(date +%s)$(dotfile_updates)$(dotfile_modified)$(git_branch)[$(user_at_host)][\w]'
 LINE2="$(am_i_ssh)\[$bldblu\]$ \[$txtrst\]"
 
 PS1="$LINE1\n$LINE2"

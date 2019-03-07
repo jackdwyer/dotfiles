@@ -175,7 +175,7 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+# bindsym $mod+r mode "resize"
 
 mode "resetdpi" {
   bindsym i exec /home/jdwyer/dotfiles/bin/set_dpi 100
@@ -196,19 +196,8 @@ bindsym $mod+t exec $HOME/dotfiles/bin/volume down
 
 bindsym $mod+z exec i3lock -c 000000
 
-mode "screensetup" {
-  bindsym i exec $HOME/.screenlayout/internal.sh; mode "default"
-  bindsym w exec $HOME/.screenlayout/work_layout.sh; mode "default"
-  bindsym d exec $HOME/.screenlayout/dual.sh; mode "default"
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
-bindsym $mod+u mode "screensetup"
-
-
 bindsym $mod+c exec xdotool click 1
 bindsym $mod+x exec xdotool click 2
-
 
 # bindsym $mod+z exec /home/jdwyer/.screenlayout/internal.sh
 
