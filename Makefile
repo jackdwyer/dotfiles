@@ -1,16 +1,19 @@
-.PHONY: st
-all: folders dotfiles tools vim-plugins
-phat: all st i3-folders vim-folders vundle
+.PHONY: st firefox
+all: folders dotfiles tools
+vim: vundle vim-plugins
+phat: all st vim
 
 SHELL=/bin/bash
 dotfiles:
 	./install.sh
 
-i3-folders:
-	mkdir -p $(HOME)/.i3
+FIREFOX_PROFILE_ID=
+firefox:
+	mkdir $(HOME)/.mozilla/firefox/$(FIREFOX_PROFILE_ID).default/chrome
+	cp firefox/userChrome.css $(HOME)/.mozilla/firefox/$(FIREFOX_PROFILE_ID).default/chrome/
 
 folders:
-	mkdir -p $(HOME)/{bin,tools,programming}
+	mkdir -p $(HOME)/{bin,tools,programming,.vim,.i3}
 
 ST_VERSION=0.8.1
 st:
@@ -18,7 +21,8 @@ st:
 	cd /tmp/ && tar xvzf /tmp/st-$(ST_VERSION).tar.gz
 	curl -o /tmp/st-$(ST_VERSION)/st-no_bold_colors-$(ST_VERSION).diff "https://st.suckless.org/patches/solarized/st-no_bold_colors-$(ST_VERSION).diff"
 	cd /tmp/st-$(ST_VERSION) && patch < st-no_bold_colors-$(ST_VERSION).diff
-	cp $(PWD)/st/config.h /tmp/st-$(ST_VERSION)/
+	cp $(PWD)/st/config.h-solarized-light /tmp/st-$(ST_VERSION)/config.h
+	# cp $(PWD)/st/config.h /tmp/st-$(ST_VERSION)/
 	cd /tmp/st-$(ST_VERSION) && make && mv st $(HOME)/bin/
 	rm -fr /tmp/st-$(ST_VERSION)
 
