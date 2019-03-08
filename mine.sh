@@ -44,7 +44,7 @@ function vc() {
   fi
   args=""
   if [[ $1 == 3 ]]; then
-    args="-p $(which python3.7)"
+    args="-p $(which python3.6)"
   fi
 
   repo=$(basename $(pwd))
