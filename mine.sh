@@ -37,14 +37,19 @@ function settings() {
 }
 
 function vc() {
+  USE_37=0
+  if [[ ${USE_37} -eq 0 ]]; then
+    _python3="python37"
+    _python3_bin="python3.7"
+  fi
   if [[ $1 == "-h" ]]; then
     echo "vc         python2"
-    echo "vc 3       python36"
+    echo "vc 3       ${_python3}"
     return
   fi
   args=""
   if [[ $1 == 3 ]]; then
-    args="-p $(which python3.6)"
+    args="-p $(which ${_python3_bin})"
   fi
 
   repo=$(basename $(pwd))
