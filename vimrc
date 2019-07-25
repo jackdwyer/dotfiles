@@ -40,7 +40,7 @@ set noswapfile
 
 set laststatus=2
 
-let g:aldmeris_termcolors = "tango"
+" let g:aldmeris_termcolors = "tango"
 
 "so i can yank to clipboard only for vim 7.3.74+
 set clipboard=unnamedplus 
@@ -88,42 +88,54 @@ filetype on
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'scrooloose/nerdtree'
-" Plugin 'godlygeek/tabular'  http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
-" Plugin 'amoffat/snake'
-" Plugin 'avakhov/vim-yaml'
+"""" I USE THESE
 Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-commentary'
-Plugin 'fatih/vim-go'
-Plugin 'mileszs/ack.vim'
 Plugin 'Yggdroot/indentLine'
-Plugin 'markcornick/vim-bats'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'davidhalter/jedi-vim'
-" Plugin 'chase/vim-ansible-yaml'
 Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'elzr/vim-json'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'b4b4r07/vim-hcl'
-Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'mrtazz/simplenote.vim'
 Plugin 'sudar/vim-arduino-syntax'
-" Plugin 'hashivim/vim-terraform'
+Plugin 'elzr/vim-json'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'vimwiki/vimwiki'
+Plugin 'airblade/vim-gitgutter'
+
+"""" MAYBE I USE THESE
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'altercation/vim-colors-solarized'
+" (dont think so)
+" Plugin 'flazz/vim-colorschemes'
+" Plugin 'godlygeek/tabular'  http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
+
+"""" I SHOULD USE
+" Plugin 'davidhalter/jedi-vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'Valloric/YouCompleteMe'
+
+"""" EH
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'mrtazz/simplenote.vim'
+" Plugin 'vimwiki/vimwiki'
 " Plugin 'Shougo/deoplete.nvim'
 " Plugin 'zchee/deoplete-go'
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-scripts/groovy.vim'
+
+"""" NOT CURRENTLY REQUIRED
+" Plugin 'vim-scripts/groovy.vim'
+" Plugin 'avakhov/vim-yaml'
+" Plugin 'fatih/vim-go'
+" Plugin 'chase/vim-ansible-yaml'
+" Plugin 'kchmck/vim-coffee-script'
+" Plugin 'b4b4r07/vim-hcl'
+" Plugin 'hashivim/vim-terraform'
+
+"""" DONT USE
+" Plugin 'mileszs/ack.vim'
+" Plugin 'amoffat/snake'
+" Plugin 'tpope/vim-commentary'
+" Plugin 'markcornick/vim-bats'
 call vundle#end()
 
 """NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-autocmd StdinReadPre * let s:std_in=1
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" autocmd StdinReadPre * let s:std_in=1
 "" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 let g:indentLine_color_term = 245
@@ -137,7 +149,8 @@ let g:indentLine_enabled = 1
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
 
-set background=dark
+" set background=dark
+
 highlight Comment    ctermfg=7 ctermbg=160 cterm=bold
 ""highlight Identifier ctermfg=99AA00
 
@@ -149,17 +162,17 @@ let g:vim_json_syntax_conceal = 0
 
 " force coffeescript ft
 
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" let g:ctrlp_map = '<c-p>'
+" let g:ctrlp_cmd = 'CtrlP'
 
 " disable ctrl+a int increment as its fuckin annoying when in tmux 
 " map <C-a> <Nop>
 
 " Use deoplete
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 " ctrl n, open NERDTree
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 
 " let g:syntastic_python_checkers = ['pylint']
 " let g:syntastic_python_checkers=['python -m flake8']
@@ -172,17 +185,16 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_w = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
-
 let g:syntastic_ignore_files = ['.*\.bats$']
 
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                     \ 'syntax': 'markdown', 'ext': '.md'}]
+" let g:vimwiki_list = [{'path': '~/vimwiki/',
+"                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " https://github.com/vim-syntastic/syntastic/issues/1391
-noremap :w<CR> :w<CR>:SyntasticCheck<CR>
+" noremap :w<CR> :w<CR>:SyntasticCheck<CR>
 
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" let g:ycm_autoclose_preview_window_after_completion=1
+" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 au FileType arduino setl sw=2 sts=2 et
 au FileType cpp setl sw=2 sts=2 et
@@ -207,14 +219,14 @@ au BufEnter,BufRead,BufNewFile Vagrantfile set filetype=ruby
 au BufEnter,BufRead,BufNewFile *.go set filetype=go
 au BufEnter,BufRead,BufNewFile *.coffee set filetype=coffee
 au BufEnter,BufRead,BufNewFile *.json set filetype=json
-au BufEnter,BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufEnter,BufRead,BufNewFile *.md set filetype=markdown
+" au BufEnter,BufRead,BufNewFile *.md set filetype=markdown
+" autocmd BufEnter,BufRead,BufNewFile *.md set filetype=markdown
 
-augroup filetypedetect
-  au! BufRead,BufNewFile */vimwiki/*        set filetype=markdown
-augroup END
+" augroup filetypedetect
+"   au! BufRead,BufNewFile */vimwiki/*        set filetype=markdown
+" augroup END
 
 colorscheme solarized
 " not sure why this has to be dark to get light :(
-set background=dark
-let g:airline_solarized_bg='dark'
+" set background=dark
+" let g:airline_solarized_bg='dark'
