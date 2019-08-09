@@ -97,7 +97,6 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'elzr/vim-json'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'airblade/vim-gitgutter'
 
 """" MAYBE I USE THESE
 Plugin 'vim-airline/vim-airline-themes'
@@ -112,6 +111,7 @@ Plugin 'altercation/vim-colors-solarized'
 " Plugin 'Valloric/YouCompleteMe'
 
 """" EH
+" Plugin 'airblade/vim-gitgutter'  --- not sure if i want this
 " Plugin 'scrooloose/nerdtree'
 " Plugin 'mrtazz/simplenote.vim'
 " Plugin 'vimwiki/vimwiki'
