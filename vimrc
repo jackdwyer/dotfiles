@@ -5,11 +5,14 @@ let mapleader=' '
 
 "Syntax highlighting lagging vim due to long lines
 set synmaxcol=160
+" Set 120 Char line length
+set colorcolumn=80
+
 " Line numbers on
 set number
 set numberwidth=3
 
-set showtabline=1
+" set showtabline=1
 " disable all beeps
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
@@ -19,8 +22,6 @@ autocmd GUIEnter * set visualbell t_vb=
 " disable delete
 inoremap <Del> <Nop>
 
-" Set 120 Char line length
-set colorcolumn=80
 
 "so it pastes nicely
 " set paste
@@ -42,8 +43,8 @@ set laststatus=2
 
 " let g:aldmeris_termcolors = "tango"
 
-"so i can yank to clipboard only for vim 7.3.74+
-set clipboard=unnamedplus 
+" so i can yank to clipboard only for vim 7.3.74+
+" set clipboard=unnamedplus 
 
 " need this so when i write underscore seperated variables names `w` moves
 " between each underscore seperator rather than the complete variable name
@@ -83,8 +84,8 @@ syntax enable
 filetype plugin indent on 
 filetype on
 
-""" deal with folding
-" set foldmethod=syntax
+" DISABLE FOLDING YO
+set nofoldenable
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -143,11 +144,11 @@ let g:indentLine_char = '¦'
 let g:indentLine_enabled = 1
 
 " let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#fnamemod = ':t'
-" set statusline=%f\ -\ FileType:\ %y
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+let g:airline#extensions#tabline#fnamemod = ':t'
+set statusline=%f\ -\ FileType:\ %y
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " set background=dark
 
@@ -191,7 +192,7 @@ let g:syntastic_ignore_files = ['.*\.bats$']
 "                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " https://github.com/vim-syntastic/syntastic/issues/1391
-" noremap :w<CR> :w<CR>:SyntasticCheck<CR>
+noremap :w<CR> :w<CR>:SyntasticCheck<CR>
 
 " let g:ycm_autoclose_preview_window_after_completion=1
 " map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
