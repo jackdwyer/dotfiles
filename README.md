@@ -91,10 +91,44 @@ ui.key.menuAccessKeyFocuse FALSE
 ### Plugins
 - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
 - [Vimium-FF](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/)
+- [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
 
-### Personalize
-Disable Password manager -> [about:preferences#privacy](about:preferences#privacy)
-> Block new requests asking to allow notifications
+
+#### General
+##### Applications
+
+`mailto` to `Always Ask` 
+
+##### Browsing
+DISABLE `Recommend extensions as you browse`
+DISABLE `Recommend features as you browse`
+
+#### Home
+Firefox Home Content only as `Top Sites :: 4 Rows`
+
+#### Search
+Default Search Engine : `DuckDuckGo`
+Disable `Provide search suggestions`
+
+Remove all `One-Click Search Engines` except for `DuckDuckGo`
+
+#### Privacy & Security
+Content Blocking -- ENABLE `Strict`
+
+Cookies and Site Data -- ENABLE `Delete cookies and site data when Firefox is closed`
+
+Login and Passwords -- Disable `Ask to save logins and passwords for websites`
+
+#### Address Bar
+Disable all suggestions
+
+#### Permissions
+Disable ALL
+Block ALL NEW REQUESTS
+
+#### Firefox Data Collection and Use
+DISABLE ALL
+
 
 ## Pass
 [Pass](https://www.passwordstore.org/)
