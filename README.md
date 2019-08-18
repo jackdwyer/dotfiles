@@ -95,6 +95,9 @@ ui.key.menuAccessKeyFocuse FALSE
 
 
 #### General
+##### Updates
+Use: `Check for updates but let you choose to install them`
+
 ##### Applications
 
 `mailto` to `Always Ask` 
