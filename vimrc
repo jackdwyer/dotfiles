@@ -108,13 +108,16 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'sudar/vim-arduino-syntax'
 " Plugin 'hashivim/vim-terraform'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'vimwiki/vimwiki'
+" Plugin 'vimwiki/vimwiki'
 " Plugin 'Shougo/deoplete.nvim'
 " Plugin 'zchee/deoplete-go'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-scripts/groovy.vim'
+
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 call vundle#end()
 
 """NERDTree

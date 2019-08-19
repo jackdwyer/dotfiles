@@ -11,7 +11,6 @@ export PATH=$PATH:$HOME/bin
 
 source ${DOT_DIR}/bash/bashcolors
 source ${DOT_DIR}/mine.sh
-source ${DOT_DIR}/work.sh
 source ${DOT_DIR}/secrets.sh
 source ${DOT_DIR}/alias.sh
 
@@ -76,4 +75,5 @@ LINE2="$(am_i_ssh)\[$bldblu\]$ \[$txtrst\]"
 
 PS1="$LINE1\n$LINE2"
 
-$DOT_DIR/post.sh
+source ${DOT_DIR}/work.sh
+${DOT_DIR}/post.sh

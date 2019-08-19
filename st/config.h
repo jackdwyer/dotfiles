@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 // static char *font = "Terminus:pixelsize=16:antialias=false:autohint=true";
-static char *font = "Liberation Mono:pixelsize=14:antialias=true:autohint=true";
+static char *font = "Liberation Mono:pixelsize=15:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
