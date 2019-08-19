@@ -175,7 +175,7 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
-# bindsym $mod+r mode "resize"
+bindsym $mod+r mode "resize"
 
 mode "resetdpi" {
   bindsym i exec /home/jdwyer/dotfiles/bin/set_dpi 100

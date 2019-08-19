@@ -22,7 +22,6 @@ autocmd GUIEnter * set visualbell t_vb=
 " disable delete
 inoremap <Del> <Nop>
 
-
 "so it pastes nicely
 " set paste
 set smartindent
@@ -228,6 +227,5 @@ au BufEnter,BufRead,BufNewFile *.json set filetype=json
 " augroup END
 
 colorscheme solarized
-" not sure why this has to be dark to get light :(
-" set background=dark
+set background=dark
 " let g:airline_solarized_bg='dark'
