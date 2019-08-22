@@ -44,7 +44,7 @@ set laststatus=2
 " let g:aldmeris_termcolors = "tango"
 
 " so i can yank to clipboard only for vim 7.3.74+
-" set clipboard=unnamedplus 
+set clipboard=unnamedplus 
 
 " need this so when i write underscore seperated variables names `w` moves
 " between each underscore seperator rather than the complete variable name
