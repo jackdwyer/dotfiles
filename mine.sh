@@ -39,8 +39,8 @@ function settings() {
 function vc() {
   USE_37=0
   if [[ ${USE_37} -eq 0 ]]; then
-    _python3="python37"
-    _python3_bin="python3.7"
+    _python3="python36"
+    _python3_bin="python3.6"
   fi
   if [[ $1 == "-h" ]]; then
     echo "vc         python2"
