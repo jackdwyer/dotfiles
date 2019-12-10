@@ -96,6 +96,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'elzr/vim-json'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'scrooloose/nerdtree'
 
 """" MAYBE I USE THESE
 Plugin 'vim-airline/vim-airline-themes'
@@ -111,7 +112,6 @@ Plugin 'altercation/vim-colors-solarized'
 
 """" EH
 " Plugin 'airblade/vim-gitgutter'  --- not sure if i want this
-" Plugin 'scrooloose/nerdtree'
 " Plugin 'mrtazz/simplenote.vim'
 " Plugin 'vimwiki/vimwiki'
 " Plugin 'Shougo/deoplete.nvim'
@@ -133,7 +133,12 @@ Plugin 'altercation/vim-colors-solarized'
 " Plugin 'markcornick/vim-bats'
 call vundle#end()
 
+
 """NERDTree
+" ctrl n, open NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+"" Not sure what these all do any more :(
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " autocmd StdinReadPre * let s:std_in=1
 "" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -170,9 +175,6 @@ let g:vim_json_syntax_conceal = 0
 
 " Use deoplete
 " let g:deoplete#enable_at_startup = 1
-
-" ctrl n, open NERDTree
-" map <C-n> :NERDTreeToggle<CR>
 
 " let g:syntastic_python_checkers = ['pylint']
 " let g:syntastic_python_checkers=['python -m flake8']
