@@ -133,6 +133,21 @@ Block ALL NEW REQUESTS
 DISABLE ALL
 
 
+#### Bookmarks
+```
+# BOOKMARK
+javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('https://pinboard.in/add?showtags=yes&url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Pinboard','toolbar=no,scrollbars=yes,width=750,height=700'));
+
+# READLATER
+javascript:q=location.href;p=document.title;void(t=open('https://pinboard.in/add?later=yes&noui=yes&jump=close&url='+encodeURIComponent(q)+'&title='+encodeURIComponent(p),'Pinboard','toolbar=no,width=100,height=100'));t.blur();
+
+# PINBOARD
+https://pinboard.in/
+
+# RANDOM
+https://pinboard.in/random/?type=unread
+```
+
 ## Pass
 [Pass](https://www.passwordstore.org/)
 
