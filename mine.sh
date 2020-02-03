@@ -37,9 +37,10 @@ function settings() {
 }
 
 function vc() {
-  USE_37=0
+  _python3_bin="python3"
+  USE_37=1
   if [[ ${USE_37} -eq 0 ]]; then
-    _python3="python36"
+    _python3_bin="python36"
     _python3_bin="python3.6"
   fi
   if [[ $1 == "-h" ]]; then
