@@ -24,6 +24,8 @@ $ dnf install at arandr curl direnv dmenu feh git go i3 i3lock inotify-tools jq 
   scrot ShellCheck sshfs terminus-fonts the_silver_searcher tmux vagrant \
   volumeicon weechat xclip xorg-x11-proto-devel xterm
 $ pip install --user neovim flake8
+
+$ dnf remove PackageKit-command-not-found
 ```
 
 ### YouCompleteMe
