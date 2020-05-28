@@ -83,11 +83,21 @@ ln -s ${HOME}/Dropbox/vimwiki ${HOME}/vimwiki
 ```
 
 ## Firefox
+### Profiles
+Browse to `about:profiles`
+- work
+- school
+- default
+
+Update work/school
+
+
+### about:config
 [about:config](about:config)
 ```
 browser.fullscreen.autohide FALSE
 # Disable autohide in fullscreen
-ui.key.menuAccessKeyFocuse FALSE
+ui.key.menuAccessKeyFocuses FALSE
 # disables alt from showing menu bar
 ```
 ### Plugins
@@ -96,7 +106,8 @@ ui.key.menuAccessKeyFocuse FALSE
 - [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
 
 
-#### General
+### Preferences
+
 ##### Updates
 Use: `Check for updates but let you choose to install them`
 
