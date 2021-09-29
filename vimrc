@@ -97,6 +97,7 @@ Plugin 'sudar/vim-arduino-syntax'
 Plugin 'elzr/vim-json'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdtree'
+Plugin 'sirtaj/vim-openscad'
 
 """" MAYBE I USE THESE
 Plugin 'vim-airline/vim-airline-themes'
@@ -212,6 +213,7 @@ au FileType html setl sw=2 sts=2 et
 au FileType htmldjango setl sw=2 sts=2 et
 au FileType json setl sw=2 sts=2 et
 au FileType javascript setl sw=2 sts=2 et
+au FileType openscad setl sw=2 sts=2 et
 
 au BufEnter,BufRead,BufNewFile *.ino,*.pde set filetype=arduino
 au BufEnter,BufRead,BufNewFile *.bats set filetype=sh
@@ -221,6 +223,7 @@ au BufEnter,BufRead,BufNewFile Vagrantfile set filetype=ruby
 au BufEnter,BufRead,BufNewFile *.go set filetype=go
 au BufEnter,BufRead,BufNewFile *.coffee set filetype=coffee
 au BufEnter,BufRead,BufNewFile *.json set filetype=json
+au BufEnter,BufRead,BufNewFile *.scad set filetype=openscad
 " au BufEnter,BufRead,BufNewFile *.md set filetype=markdown
 " autocmd BufEnter,BufRead,BufNewFile *.md set filetype=markdown
 
