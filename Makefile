@@ -15,13 +15,19 @@ firefox:
 folders:
 	mkdir -p $(HOME)/{bin,tools,programming,.vim,.i3}
 
-ST_VERSION=0.8.1
+ST_VERSION=0.8.4
+NO_BOLD_VERSION=0.8.1
 st:
+	# st
 	curl -o /tmp/st-$(ST_VERSION).tar.gz "https://dl.suckless.org/st/st-$(ST_VERSION).tar.gz"
 	cd /tmp/ && tar xvzf /tmp/st-$(ST_VERSION).tar.gz
-	curl -o /tmp/st-$(ST_VERSION)/st-no_bold_colors-$(ST_VERSION).diff "https://st.suckless.org/patches/solarized/st-no_bold_colors-$(ST_VERSION).diff"
-	cd /tmp/st-$(ST_VERSION) && patch < st-no_bold_colors-$(ST_VERSION).diff
-	cp $(PWD)/st/config.h-solarized-light /tmp/st-$(ST_VERSION)/config.h
+	# no bold
+	curl -o /tmp/st-$(ST_VERSION)/st-no_bold_colors-$(NO_BOLD_VERSION).diff "https://st.suckless.org/patches/solarized/st-no_bold_colors-$(NO_BOLD_VERSION).diff"
+	cd /tmp/st-$(ST_VERSION) && patch < st-no_bold_colors-$(NO_BOLD_VERSION).diff
+	# solarized both
+	curl -o /tmp/st-$(ST_VERSION)/st-solarized-both-$(ST_VERSION).diff https://st.suckless.org/patches/solarized/st-solarized-both-$(ST_VERSION).diff
+	cd /tmp/st-$(ST_VERSION) && patch < st-solarized-both-$(ST_VERSION).diff
+	# cp $(PWD)/st/config.h-solarized-light /tmp/st-$(ST_VERSION)/config.h
 	# cp $(PWD)/st/config.h /tmp/st-$(ST_VERSION)/
 	cd /tmp/st-$(ST_VERSION) && make && mv st $(HOME)/bin/
 	rm -fr /tmp/st-$(ST_VERSION)
